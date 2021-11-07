@@ -7,7 +7,7 @@ declare const Button: {
         external: boolean;
         variant: "primary";
         scale: "md";
-        border: "sm";
+        border: "md";
         disabled: boolean;
     };
 };

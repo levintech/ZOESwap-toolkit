@@ -30,7 +30,7 @@ export const Default: React.FC = () => {
   return (
     <>
       <Row>
-        <ButtonMenu activeIndex={index} onItemClick={handleClick}>
+        <ButtonMenu activeIndex={index} onItemClick={handleClick} border="md">
           <ButtonMenuItem>Button 1</ButtonMenuItem>
           <ButtonMenuItem>Button 2</ButtonMenuItem>
           <ButtonMenuItem>Button 3</ButtonMenuItem>
