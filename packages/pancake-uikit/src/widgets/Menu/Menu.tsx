@@ -118,8 +118,11 @@ const Menu: React.FC<NavProps> = ({
           isDark={isDark}
           href={homeLink?.href ?? "/"}
         />
-        <Flex>
+        {/* <Flex>
           {globalMenu} {userMenu}
+        </Flex> */}
+        <Flex>
+          {userMenu}
         </Flex>
       </StyledNav>
       <BodyWrapper>
