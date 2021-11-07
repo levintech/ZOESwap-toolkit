@@ -281,7 +281,7 @@ Button.defaultProps = {
     external: false,
     variant: variants$6.PRIMARY,
     scale: scales$8.MD,
-    border: borders.MD,
+    border: borders.SM,
     disabled: false,
 };
 

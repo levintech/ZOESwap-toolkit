@@ -45,7 +45,7 @@ Button.defaultProps = {
   external: false,
   variant: variants.PRIMARY,
   scale: scales.MD,
-  border: borders.MD,
+  border: borders.SM,
   disabled: false,
 };
 
