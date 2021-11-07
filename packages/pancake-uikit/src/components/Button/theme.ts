@@ -1,4 +1,4 @@
-import { scales, variants } from "./types";
+import { scales, variants, borders } from "./types";
 
 export const scaleVariants = {
   [scales.MD]: {
@@ -52,5 +52,14 @@ export const styleVariants = {
     backgroundColor: "transparent",
     color: "primary",
     boxShadow: "none",
+  },
+};
+
+export const radiusVariants = {
+  [borders.MD]: {
+    borderRadius: "30px",
+  },
+  [borders.SM]: {
+    borderRadius: "8px",
   },
 };

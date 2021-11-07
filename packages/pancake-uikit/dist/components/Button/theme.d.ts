@@ -51,3 +51,11 @@ export declare const styleVariants: {
         boxShadow: string;
     };
 };
+export declare const radiusVariants: {
+    md: {
+        borderRadius: string;
+    };
+    sm: {
+        borderRadius: string;
+    };
+};

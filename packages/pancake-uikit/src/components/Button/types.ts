@@ -18,8 +18,14 @@ export const variants = {
   SUCCESS: "success",
 } as const;
 
+export const borders = {
+  SM: "sm",
+  MD: "md",
+} as const;
+
 export type Scale = typeof scales[keyof typeof scales];
 export type Variant = typeof variants[keyof typeof variants];
+export type Radius = typeof borders[keyof typeof borders];
 
 /**
  * @see https://www.benmvp.com/blog/polymorphic-react-components-typescript/
@@ -42,6 +48,7 @@ export interface BaseButtonProps extends LayoutProps, SpaceProps {
   isLoading?: boolean;
   scale?: Scale;
   variant?: Variant;
+  border?: Radius;
   disabled?: boolean;
   startIcon?: ReactNode;
   endIcon?: ReactNode;

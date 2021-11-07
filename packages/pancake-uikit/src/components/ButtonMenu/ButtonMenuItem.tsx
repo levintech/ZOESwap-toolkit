@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Button from "../Button/Button";
-import { BaseButtonProps, PolymorphicComponent, variants } from "../Button/types";
+import { BaseButtonProps, PolymorphicComponent, variants, borders } from "../Button/types";
 import { ButtonMenuItemProps } from "./types";
 
 interface InactiveButtonProps extends BaseButtonProps {
@@ -19,6 +19,7 @@ const InactiveButton: PolymorphicComponent<InactiveButtonProps, "button"> = styl
 const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
   isActive = false,
   variant = variants.PRIMARY,
+  border = borders.MD,
   as,
   ...props
 }: ButtonMenuItemProps) => {
@@ -26,7 +27,7 @@ const ButtonMenuItem: PolymorphicComponent<ButtonMenuItemProps, "button"> = ({
     return <InactiveButton forwardedAs={as} variant={variant} {...props} />;
   }
 
-  return <Button as={as} variant={variant} {...props} />;
+  return <Button as={as} variant={variant} border={border} {...props} />;
 };
 
 export default ButtonMenuItem;

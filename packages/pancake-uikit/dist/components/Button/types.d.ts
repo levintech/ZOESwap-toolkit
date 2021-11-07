@@ -15,8 +15,13 @@ export declare const variants: {
     readonly SUBTLE: "subtle";
     readonly SUCCESS: "success";
 };
+export declare const borders: {
+    readonly SM: "sm";
+    readonly MD: "md";
+};
 export declare type Scale = typeof scales[keyof typeof scales];
 export declare type Variant = typeof variants[keyof typeof variants];
+export declare type Radius = typeof borders[keyof typeof borders];
 /**
  * @see https://www.benmvp.com/blog/polymorphic-react-components-typescript/
  */
@@ -32,6 +37,7 @@ export interface BaseButtonProps extends LayoutProps, SpaceProps {
     isLoading?: boolean;
     scale?: Scale;
     variant?: Variant;
+    border?: Radius;
     disabled?: boolean;
     startIcon?: ReactNode;
     endIcon?: ReactNode;

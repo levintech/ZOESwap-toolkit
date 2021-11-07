@@ -1,6 +1,6 @@
 import styled, { DefaultTheme } from "styled-components";
 import { space, layout, variant } from "styled-system";
-import { scaleVariants, styleVariants } from "./theme";
+import { scaleVariants, styleVariants, radiusVariants } from "./theme";
 import { BaseButtonProps } from "./types";
 
 interface ThemedButtonProps extends BaseButtonProps {
@@ -46,7 +46,6 @@ const getOpacity = ({ $isLoading = false }: TransientButtonProps) => {
 const StyledButton = styled.button<BaseButtonProps>`
   align-items: center;
   border: 0;
-  border-radius: 8px;
   cursor: pointer;
   display: inline-flex;
   font-family: inherit;
@@ -76,6 +75,10 @@ const StyledButton = styled.button<BaseButtonProps>`
   })}
   ${variant({
     variants: styleVariants,
+  })}
+  ${variant({
+    prop: "border",
+    variants: radiusVariants,
   })}
   ${layout}
   ${space}

@@ -6,6 +6,7 @@ declare const MenuButton: import("styled-components").StyledComponent<{
         external: boolean;
         variant: "primary";
         scale: "md";
+        border: "sm";
         disabled: boolean;
     };
 }, import("styled-components").DefaultTheme, {}, never>;

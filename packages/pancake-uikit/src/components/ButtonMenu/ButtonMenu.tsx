@@ -1,7 +1,7 @@
 import React, { cloneElement, Children, ReactElement } from "react";
 import styled, { DefaultTheme } from "styled-components";
 import { space } from "styled-system";
-import { scales, variants } from "../Button/types";
+import { scales, variants, borders } from "../Button/types";
 import { ButtonMenuProps } from "./types";
 
 interface StyledButtonMenuProps extends ButtonMenuProps {
@@ -18,7 +18,7 @@ const getBorderColor = ({ theme, variant }: StyledButtonMenuProps) => {
 
 const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
   background-color: ${getBackgroundColor};
-  border-radius: 8px;
+  border-radius: 30px;
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
   border: 1px solid ${getBorderColor};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
@@ -58,6 +58,7 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
   activeIndex = 0,
   scale = scales.MD,
   variant = variants.PRIMARY,
+  border = borders.SM,
   onItemClick,
   disabled,
   children,
@@ -65,13 +66,14 @@ const ButtonMenu: React.FC<ButtonMenuProps> = ({
   ...props
 }) => {
   return (
-    <StyledButtonMenu disabled={disabled} variant={variant} fullWidth={fullWidth} {...props}>
+    <StyledButtonMenu disabled={disabled} variant={variant} border={border} fullWidth={fullWidth} {...props}>
       {Children.map(children, (child: ReactElement, index) => {
         return cloneElement(child, {
           isActive: activeIndex === index,
           onClick: onItemClick ? () => onItemClick(index) : undefined,
           scale,
           variant,
+          border,
           disabled,
         });
       })}
