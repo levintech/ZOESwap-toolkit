@@ -36,6 +36,10 @@ build/Release
 node_modules/
 jspm_packages/
 
+# production
+dist
+storybook-static
+
 # TypeScript v1 declaration files
 typings/
 
