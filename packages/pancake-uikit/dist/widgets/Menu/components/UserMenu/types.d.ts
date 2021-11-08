@@ -7,6 +7,7 @@ export declare const variants: {
 };
 export declare type Variant = typeof variants[keyof typeof variants];
 export interface UserMenuProps extends FlexProps {
+    onUserMenuModal: () => void;
     account?: string;
     text?: string;
     avatarSrc?: string;

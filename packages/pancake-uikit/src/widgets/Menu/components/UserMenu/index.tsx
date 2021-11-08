@@ -12,12 +12,10 @@ const StyledUserMenu = styled(Flex)`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.tertiary};
   border-radius: 8px;
-  box-shadow: inset 0px -2px 0px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   display: inline-flex;
-  height: 32px;
-  padding-left: 40px;
-  padding-right: 8px;
+  height: 48px;
+  padding: 0px 24px;
   position: relative;
 
   &:hover {
@@ -37,39 +35,13 @@ const LabelText = styled.div`
   }
 `;
 
-const Menu = styled.div<{ isOpen: boolean }>`
-  background-color: ${({ theme }) => theme.card.background};
-  border: 1px solid ${({ theme }) => theme.colors.cardBorder};
-  border-radius: 8px;
-  padding-bottom: 4px;
-  padding-top: 4px;
-  pointer-events: auto;
-  width: 280px;
-  visibility: visible;
-  z-index: 1001;
-
-  ${({ isOpen }) =>
-    !isOpen &&
-    `
-    pointer-events: none;
-    visibility: hidden;
-  `}
-
-  ${UserMenuItem}:first-child {
-    border-radius: 8px 8px 0 0;
-  }
-
-  ${UserMenuItem}:last-child {
-    border-radius: 0 0 8px 8px;
-  }
-`;
-
 const UserMenu: React.FC<UserMenuProps> = ({
   account,
   text,
   avatarSrc,
   variant = variants.DEFAULT,
   children,
+  onUserMenuModal,
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -77,7 +49,7 @@ const UserMenu: React.FC<UserMenuProps> = ({
   const [tooltipRef, setTooltipRef] = useState<HTMLDivElement | null>(null);
   const hideTimeout = useRef<number>();
   const isHoveringOverTooltip = useRef(false);
-  const accountEllipsis = account ? `${account.substring(0, 2)}...${account.substring(account.length - 4)}` : null;
+  const accountEllipsis = account ? `${account.substring(0, 6)}...${account.substring(account.length - 4)}` : null;
   const { styles, attributes } = usePopper(targetRef, tooltipRef, {
     placement: "bottom-end",
     modifiers: [{ name: "offset", options: { offset: [0, 12] } }],
@@ -157,14 +129,14 @@ const UserMenu: React.FC<UserMenuProps> = ({
 
   return (
     <>
-      <StyledUserMenu ref={setTargetRef} {...props}>
-        <MenuIcon avatarSrc={avatarSrc} variant={variant} />
+      <StyledUserMenu onClick={onUserMenuModal} {...props}>
+        {/* <MenuIcon avatarSrc={avatarSrc} variant={variant} /> */}
         <LabelText title={text || account}>{text || accountEllipsis}</LabelText>
-        <ChevronDownIcon color="text" width="24px" />
+        {/* <ChevronDownIcon color="text" width="24px" /> */}
       </StyledUserMenu>
-      <Menu style={styles.popper} ref={setTooltipRef} {...attributes.popper} isOpen={isOpen}>
+      {/* <Menu style={styles.popper} {...attributes.popper} isOpen={isOpen}>
         {children}
-      </Menu>
+      </Menu> */}
     </>
   );
 };
