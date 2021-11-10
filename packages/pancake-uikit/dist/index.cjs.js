@@ -1459,15 +1459,11 @@ var getBackgroundColor = function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return theme.colors[variant === variants$5.SUBTLE ? "input" : "tertiary"];
 };
-var getBorderColor$1 = function (_a) {
-    var theme = _a.theme, variant = _a.variant;
-    return theme.colors[variant === variants$5.SUBTLE ? "inputSecondary" : "disabled"];
-};
-var StyledButtonMenu = styled__default['default'].div(templateObject_1$W || (templateObject_1$W = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 30px;\n  display: ", ";\n  border: 1px solid ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n"], ["\n  background-color: ", ";\n  border-radius: 30px;\n  display: ", ";\n  border: 1px solid ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ",
+var StyledButtonMenu = styled__default['default'].div(templateObject_1$W || (templateObject_1$W = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 30px;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n"], ["\n  background-color: ", ";\n  border-radius: 30px;\n  display: ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ",
     "\n  ", "\n"])), getBackgroundColor, function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "flex" : "inline-flex");
-}, getBorderColor$1, function (_a) {
+}, function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "100%" : "auto");
 }, function (_a) {
@@ -1526,7 +1522,7 @@ var getBorderColor = function (_a) {
     if (isActive) {
         return "linear-gradient(180deg, " + theme.colors.primaryBright + ", " + theme.colors.secondary + ")";
     }
-    return theme.colors.cardBorder;
+    return theme.colors.backgroundAlt;
 };
 var StyledCard = styled__default['default'].div(templateObject_3$b || (templateObject_3$b = __makeTemplateObject(["\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n  overflow: hidden;\n  position: relative;\n\n  ", "\n\n  ", "\n"], ["\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n  overflow: hidden;\n  position: relative;\n\n  ",
     "\n\n  ", "\n"])), getBorderColor, function (_a) {
@@ -1571,7 +1567,7 @@ CardBody.defaultProps = {
 };
 var templateObject_1$T;
 
-var CardHeader = styled__default['default'].div(templateObject_1$S || (templateObject_1$S = __makeTemplateObject(["\n  background: ", ";\n  border-radius: ", ";\n  ", "\n"], ["\n  background: ", ";\n  border-radius: ", ";\n  ", "\n"])), function (_a) {
+var CardHeader = styled__default['default'].div(templateObject_1$S || (templateObject_1$S = __makeTemplateObject(["\n  // background: ", ";\n  background: transparent;\n  border-radius: ", ";\n  ", "\n"], ["\n  // background: ", ";\n  background: transparent;\n  border-radius: ", ";\n  ", "\n"])), function (_a) {
     var theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? "default" : _b;
     return theme.card.cardHeaderBackground[variant];
 }, function (_a) {
@@ -3387,12 +3383,12 @@ var baseColors = {
 };
 var additionalColors = {
     binance: "#F0B90B",
-    overlay: "#452a7a",
+    overlay: "#343434",
     gold: "#FFC700",
     silver: "#B2B2B2",
     bronze: "#E7974D",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", backgroundAlt: "#FFFFFF", cardBorder: "#E7E3EB", contrast: "#191326", dropdown: "#F6F6F6", dropdownDeep: "#EEEEEE", invertedContrast: "#FFFFFF", input: "#f1f1f166", inputSecondary: "#d7caec", tertiary: "#EFF4F5", text: "#373737", textDisabled: "#777777", textSubtle: "#373737", disabled: "#E9EAEB", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", backgroundAlt: "#FFFFFF", cardBorder: "#E9EAEB", contrast: "#191326", dropdown: "#F6F6F6", dropdownDeep: "#EEEEEE", invertedContrast: "#FFFFFF", input: "#f1f1f166", inputSecondary: "#d7caec", tertiary: "#EFF4F5", text: "#373737", textDisabled: "#777777", textSubtle: "#373737", disabled: "#E9EAEB", gradients: {
         bubblegum: "linear-gradient(139.73deg, #E5FDFF 0%, #F3EFFF 100%)",
         inverseBubblegum: "linear-gradient(139.73deg, #F3EFFF 0%, #E5FDFF 100%)",
         cardHeader: "linear-gradient(111.68deg, #F2ECF2 0%, #E8F2F6 100%)",
@@ -3401,7 +3397,7 @@ var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors),
         violetAlt: "linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)",
         gold: "linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)",
     } });
-var darkColors = __assign(__assign(__assign({}, baseColors), additionalColors), { secondary: "#9A6AFF", background: "#08060B", backgroundDisabled: "#3c3742", backgroundAlt: "#27262c", cardBorder: "#383241", contrast: "#FFFFFF", dropdown: "#1E1D20", dropdownDeep: "#100C18", invertedContrast: "#191326", input: "#372F47", inputSecondary: "#262130", primaryDark: "#0098A1", tertiary: "#353547", text: "#F4EEFF", textDisabled: "#666171", textSubtle: "#B8ADD2", disabled: "#524B63", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), additionalColors), { background: "#2b2b2b", backgroundDisabled: "#c7c7c7", backgroundAlt: "#343434", cardBorder: "#c7c7c7", contrast: "#FFFFFF", dropdown: "#1E1D20", dropdownDeep: "#100C18", invertedContrast: "#191326", input: "#444444", inputSecondary: "#262130", primaryDark: "#0098A1", tertiary: "#444444", text: "#F4EEFF", textDisabled: "#777777", textSubtle: "#F4EEFF", disabled: "#c7c7c7", gradients: {
         bubblegum: "linear-gradient(139.73deg, #313D5C 0%, #3D2A54 100%)",
         inverseBubblegum: "linear-gradient(139.73deg, #3D2A54 0%, #313D5C 100%)",
         cardHeader: "linear-gradient(166.77deg, #3B4155 0%, #3A3045 100%)",
@@ -3714,10 +3710,10 @@ var ModalContainer = styled__default['default'](Box)(templateObject_4$2 || (temp
 var templateObject_1$g, templateObject_2$8, templateObject_3$3, templateObject_4$2;
 
 var Modal = function (_a) {
-    var title = _a.title, onDismiss = _a.onDismiss, onBack = _a.onBack, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b, _c = _a.bodyPadding, bodyPadding = _c === void 0 ? "24px" : _c, _d = _a.headerBackground, headerBackground = _d === void 0 ? "transparent" : _d, _e = _a.minWidth, minWidth = _e === void 0 ? "320px" : _e, props = __rest(_a, ["title", "onDismiss", "onBack", "children", "hideCloseButton", "bodyPadding", "headerBackground", "minWidth"]);
-    var theme = styled.useTheme();
+    var title = _a.title, onDismiss = _a.onDismiss, onBack = _a.onBack, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b, _c = _a.bodyPadding, bodyPadding = _c === void 0 ? "24px" : _c; _a.headerBackground; var _e = _a.minWidth, minWidth = _e === void 0 ? "320px" : _e, props = __rest(_a, ["title", "onDismiss", "onBack", "children", "hideCloseButton", "bodyPadding", "headerBackground", "minWidth"]);
+    styled.useTheme();
     return (React__default['default'].createElement(ModalContainer, __assign({ minWidth: minWidth }, props),
-        React__default['default'].createElement(ModalHeader, { background: getThemeValue("colors." + headerBackground, headerBackground)(theme) },
+        React__default['default'].createElement(ModalHeader, null,
             React__default['default'].createElement(ModalTitle, null,
                 onBack && React__default['default'].createElement(ModalBackButton, { onBack: onBack }),
                 React__default['default'].createElement(Heading, null, title)),
