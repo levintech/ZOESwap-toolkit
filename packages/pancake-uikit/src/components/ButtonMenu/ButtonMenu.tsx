@@ -20,7 +20,6 @@ const StyledButtonMenu = styled.div<StyledButtonMenuProps>`
   background-color: ${getBackgroundColor};
   border-radius: 30px;
   display: ${({ fullWidth }) => (fullWidth ? "flex" : "inline-flex")};
-  border: 1px solid ${getBorderColor};
   width: ${({ fullWidth }) => (fullWidth ? "100%" : "auto")};
 
   & > button,
