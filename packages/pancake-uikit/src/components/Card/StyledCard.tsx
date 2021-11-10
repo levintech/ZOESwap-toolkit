@@ -38,7 +38,7 @@ const getBorderColor = ({ isActive, isSuccess, isWarning, borderBackground, them
     return `linear-gradient(180deg, ${theme.colors.primaryBright}, ${theme.colors.secondary})`;
   }
 
-  return theme.colors.cardBorder;
+  return theme.colors.backgroundAlt;
 };
 
 export const StyledCard = styled.div<StyledCardProps>`
