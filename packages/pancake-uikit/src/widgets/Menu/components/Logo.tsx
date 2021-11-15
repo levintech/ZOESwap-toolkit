@@ -22,15 +22,15 @@ const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   .mobile-icon {
-    width: 32px;
-    ${({ theme }) => theme.mediaQueries.nav} {
-      display: none;
-    }
+    width: 30px;
+    // ${({ theme }) => theme.mediaQueries.nav} {
+    //   display: none;
+    // }
   }
   .desktop-icon {
     width: 160px;
     display: none;
-    ${({ theme }) => theme.mediaQueries.nav} {
+    ${({ theme }) => theme.mediaQueries.sm} {
       display: block;
     }
   }
@@ -48,12 +48,38 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const StyledLogo = styled.img`
+  width: 30px;
+  height: 30px;
+`;
+
+const StyledLogoText = styled.text`
+  color: ${({ theme }) => theme.colors.text};
+  margin-left: 0.3rem;
+  font-size: 1.3rem;
+  font-style: bold;
+  font-weight: bolder;
+`;
+
 const Logo: React.FC<Props> = ({ isPushed, togglePush, isDark, href }) => {
   const isAbsoluteUrl = href.startsWith("http");
   const innerLogo = (
     <>
-      <LogoIcon className="mobile-icon" />
-      <LogoWithText className="desktop-icon" isDark={isDark} />
+      {isDark ? (
+        <>
+          <StyledLogo className="mobile-icon" src="/images/logo-dark.png" />
+          <StyledLogoText className="desktop-icon">
+            ZOE Swap
+          </StyledLogoText>
+        </>
+      ) : (
+        <>
+          <StyledLogo className="mobile-icon" src="/images/logo-light.png" />
+          <StyledLogoText className="desktop-icon">
+            ZOE Swap
+          </StyledLogoText>
+        </>
+      )}
     </>
   );
 
