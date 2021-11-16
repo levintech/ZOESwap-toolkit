@@ -1525,7 +1525,7 @@ var getBorderColor = function (_a) {
     }
     return theme.colors.backgroundAlt;
 };
-var StyledCard = styled__default['default'].div(templateObject_3$c || (templateObject_3$c = __makeTemplateObject(["\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n  overflow: hidden;\n  position: relative;\n\n  ", "\n\n  ", "\n"], ["\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n  overflow: hidden;\n  position: relative;\n\n  ",
+var StyledCard = styled__default['default'].div(templateObject_3$c || (templateObject_3$c = __makeTemplateObject(["\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n  box-shadow: 0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05);\n  overflow: hidden;\n  position: relative;\n\n  ", "\n\n  ", "\n"], ["\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n  box-shadow: 0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05);\n  overflow: hidden;\n  position: relative;\n\n  ",
     "\n\n  ", "\n"])), getBorderColor, function (_a) {
     var theme = _a.theme;
     return theme.radii.card;

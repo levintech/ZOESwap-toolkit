@@ -45,6 +45,7 @@ export const StyledCard = styled.div<StyledCardProps>`
   background: ${getBorderColor};
   border-radius: ${({ theme }) => theme.radii.card};
   color: ${({ theme, isDisabled }) => theme.colors[isDisabled ? "textDisabled" : "text"]};
+  box-shadow: 0px 2px 12px -8px rgba(25, 19, 38, 0.1), 0px 1px 1px rgba(25, 19, 38, 0.05);
   overflow: hidden;
   position: relative;
 
