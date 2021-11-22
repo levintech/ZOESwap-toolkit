@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import PanIcon from "./PanIcon";
 import PancakeIcon from "./PancakeIcon";
 import { SpinnerProps } from "./types";
+import { Svg, SvgProps } from "../Svg";
 
 const rotate = keyframes`
   from {
@@ -29,7 +30,15 @@ const Container = styled.div`
   position: relative;
 `;
 
-const RotatingPancakeIcon = styled(PancakeIcon)`
+const SpinnerIcon: React.FC<SvgProps> = (props) => {
+  return (
+    <Svg viewBox="0 0 96 96" {...props}>
+      <image width="96" height="96" href="/images/logo-dark.png"/>
+    </Svg>
+  );
+};
+
+const RotatingIcon = styled(SpinnerIcon)`
   position: absolute;
   top: 0;
   left: 0;
@@ -45,8 +54,8 @@ const FloatingPanIcon = styled(PanIcon)`
 const Spinner: React.FC<SpinnerProps> = ({ size = 128 }) => {
   return (
     <Container>
-      <RotatingPancakeIcon width={`${size * 0.5}px`} />
-      <FloatingPanIcon width={`${size}px`} />
+      <RotatingIcon width={`${size * 0.5}px`} />
+      {/* <FloatingPanIcon width={`${size}px`} /> */}
     </Container>
   );
 };
